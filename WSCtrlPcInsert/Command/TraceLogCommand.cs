@@ -16,18 +16,10 @@ namespace WSCtrlPcInsert.Command
                 //test droit ecriture + ajout ligne si non présente + incrémente compteur
                 if (VerifPresenceDate(guid) == "OK")
                 {
-                    int codeappliInt;
-                    bool testCodeappli = Int32.TryParse(codeappli, out codeappliInt);
-                    if (testCodeappli)
-                    {
-                        description = ControleString(description);
-                        TraceLogModel myTraceLogModel = new TraceLogModel(guid,dateTraitement,codeappli,codeerreur,description);
-                        return "OK";
-                    }
-                    else
-                    {
-                        return "KO";
-                    }
+                    codeappli = ControleString(codeappli);
+                    description = ControleString(description);
+                    TraceLogModel myTraceLogModel = new TraceLogModel(guid, dateTraitement, codeappli, codeerreur, description);
+                    return "OK";                    
                 }
                 else if(VerifPresenceDate(guid)=="RELICA")
                 {
