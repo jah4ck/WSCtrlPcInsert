@@ -25,10 +25,10 @@ namespace WSCtrlPcInsert
         }
 
         [WebMethod]
-        public void TraceLog(string guid, DateTime dateTraitement, string codeappli, int codeerreur, string description)
+        public string TraceLog(string guid, DateTime dateTraitement, string codeappli, int codeerreur, string description)
         {
             TraceLogCommand MyTraceLogCommand = new TraceLogCommand();
-            MyTraceLogCommand.TraceLogCommandAction(guid, dateTraitement, codeappli, codeerreur, description);
+            return MyTraceLogCommand.TraceLogCommandAction(guid, dateTraitement, codeappli, codeerreur, description);
         }
     }
 }
