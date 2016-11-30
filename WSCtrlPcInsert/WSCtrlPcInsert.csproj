@@ -121,6 +121,11 @@
     <Content Include="WSCtrlPcInsert.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\TraceLogCommand.cs" />
+    <Compile Include="Helper\HelperControle.cs" />
+    <Compile Include="Model\ExecReqSqlNoQuery.cs" />
+    <Compile Include="Model\ExecReqSqlReader.cs" />
+    <Compile Include="Model\TraceLogModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WSCtrlPcInsert.asmx.cs">
       <DependentUpon>WSCtrlPcInsert.asmx</DependentUpon>
@@ -139,6 +144,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

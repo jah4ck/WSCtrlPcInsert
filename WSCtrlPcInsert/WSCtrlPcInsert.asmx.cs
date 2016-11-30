@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using WSCtrlPcInsert.Command;
 
 namespace WSCtrlPcInsert
 {
@@ -23,5 +24,11 @@ namespace WSCtrlPcInsert
             return "Hello World";
         }
 
+        [WebMethod]
+        public void TraceLog(string guid, DateTime dateTraitement, string codeappli, int codeerreur, string description)
+        {
+            TraceLogCommand MyTraceLogCommand = new TraceLogCommand();
+            MyTraceLogCommand.TraceLogCommandAction(guid, dateTraitement, codeappli, codeerreur, description);
+        }
     }
 }
