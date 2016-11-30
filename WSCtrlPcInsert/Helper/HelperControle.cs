@@ -53,7 +53,7 @@ namespace WSCtrlPcInsert.Helper
         public string VerifPresenceDate(string guid)
         {
             ExecReqSqlReader MyExecReqSqlReader = new ExecReqSqlReader();
-            MyExecReqSqlReader.ExecuteReq(@"EXEC CtrlPc.dbo.PS_ControleInsert '76790700-3c4e-4819-b7b1-20cf2cc20e47'");
+            MyExecReqSqlReader.ExecuteReq(@"EXEC CtrlPc.dbo.PS_ControleInsert '"+guid+"'");
             string temp = MyExecReqSqlReader.result;
             if (temp.Contains("KO"))
             {
