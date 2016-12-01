@@ -14,14 +14,16 @@ namespace WSCtrlPcInsert.Command
             if (OnlyHexInString(guid))
             {
                 //test droit ecriture + ajout ligne si non présente + incrémente compteur
-                if (VerifPresenceDate(guid) == "OK")
+                string result="RAS";
+                result = VerifPresenceDate(guid);
+                if (result == "OK")
                 {
                     codeappli = ControleString(codeappli);
                     description = ControleString(description);
                     TraceLogModel myTraceLogModel = new TraceLogModel(guid, dateTraitement, codeappli, codeerreur, description);
                     return "OK";                    
                 }
-                else if(VerifPresenceDate(guid)=="RELICA")
+                else if(result == "RELICA")
                 {
                     return "RELICA";
                 }
